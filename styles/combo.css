@@ -1,6 +1,3 @@
-/* Autocomplete combobox: input + chevron toggle + grouped dropdown options.
-   Loaded after form.css so combo-specific overrides on `.combo input` win. */
-
 .combo > label:first-child {
   display: none;
 }
@@ -65,8 +62,6 @@
   text-transform: uppercase;
 }
 
-/* Scoped through `.combo-menu` to beat `.field button` from form.css and
-   keep menu options border-free (otherwise has-error tints them red). */
 .combo-menu .combo-option,
 .combo-menu .combo-create {
   display: flex;

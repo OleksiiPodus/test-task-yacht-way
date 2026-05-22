@@ -1,5 +1,3 @@
-/* Select-trigger variants (placeholder vs filled value) and the shared chevron. */
-
 .select button.select-ph {
   gap: 12px;
   color: var(--muted);

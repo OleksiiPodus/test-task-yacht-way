@@ -1,6 +1,3 @@
-/* "Create New Model" dialog: backdrop, container, header, copy, field, footer
-   actions (primary/secondary). */
-
 .modal-backdrop {
   position: fixed;
   inset: 0;

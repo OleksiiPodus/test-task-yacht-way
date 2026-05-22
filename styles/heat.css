@@ -1,10 +1,3 @@
-/* Listing Heat indicator: pill with snowflake/sun icon swap, orbiting suns,
-   and screen background that warms up as the form gets filled in.
-
-   States are toggled on `.screen` by heat.js (heat-freezing | heat-cold |
-   heat-warm | heat-hot). Orbs gain `.is-visible` one-by-one as score grows. */
-
-/* --- pill --- */
 .heat {
   display: flex;
   align-items: center;
@@ -91,9 +84,6 @@
   }
 }
 
-/* --- orbiting suns: positions sourced 1:1 from Figma (Main Section coords),
-   anchored to header right edge so pill content can change width without
-   shifting the orbs. heat.js adds `.is-visible` to a top-down number of them. */
 .heat-orbs {
   position: absolute;
   inset: 0;
@@ -139,7 +129,6 @@
   animation: orb-float 3.6s ease-in-out infinite;
 }
 
-/* Stagger so orbs don't pulse in unison. */
 .orb-2.is-visible {
   animation-delay: 0.4s;
 }
@@ -166,8 +155,6 @@
   }
 }
 
-/* --- screen + pill backgrounds per state. Tint sits at top and fades to
-   white quickly so floating labels and form inputs stay readable. */
 .screen.heat-freezing {
   background: #fff;
 }

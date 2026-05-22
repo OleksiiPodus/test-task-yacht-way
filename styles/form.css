@@ -1,6 +1,3 @@
-/* Form skeleton: groups, rows, base field, floating label, error/locked states,
-   error message, status banner, hint text, generic checkbox row, section margins. */
-
 .form {
   display: flex;
   flex-direction: column;
@@ -102,7 +99,8 @@
   width: 16px;
   height: 16px;
   background-color: #b42318;
-  -webkit-mask: url("../assets/icons/ui/icon-info.svg") center / contain no-repeat;
+  -webkit-mask: url("../assets/icons/ui/icon-info.svg") center / contain
+    no-repeat;
   mask: url("../assets/icons/ui/icon-info.svg") center / contain no-repeat;
 }
 
@@ -208,7 +206,6 @@
   align-self: flex-start;
 }
 
-/* Section spacing — each form group has its own bottom margin to control rhythm. */
 .vessel-details {
   margin-bottom: 40px;
 }
