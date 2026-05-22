@@ -1,0 +1,150 @@
+/* Price section: price input with trailing currency, market comparison block,
+   divider, Hide Price checkbox row, warning message. */
+
+.price-block {
+  margin-bottom: 40px;
+}
+
+.field.price-input {
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.price-input input {
+  padding-right: 72px;
+}
+
+.price-currency {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 2px 2px 4px;
+  background: #f9fafb;
+  border-radius: 4px;
+  color: #2f2f39;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.market {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  margin: 0;
+  padding: 12px;
+  background: #f9fafb;
+  border-radius: 4px;
+}
+
+.market-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.market-title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  color: #22222d;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.market-highlight {
+  font-weight: 600;
+}
+
+.market-arrow {
+  flex-shrink: 0;
+}
+
+.market-sub {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.market-sub p {
+  margin: 0;
+}
+
+.market-sub a {
+  display: block;
+  color: var(--purple);
+  text-decoration: underline;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.market-right {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.market-right > span:not(.market-range-value) {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.market-range-value {
+  color: #2f2f39;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #f1f1f2;
+  margin: 24px 0;
+}
+
+.check.hide {
+  align-items: flex-start;
+}
+
+.hide-price-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hide-price-group > span {
+  font-weight: 500;
+}
+
+.warning {
+  margin: 0;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.warning strong {
+  color: #dc6803;
+  font-weight: 600;
+}
+
+.warning span {
+  color: #3c3c46;
+  font-weight: 400;
+}
+
+@media (max-width: 620px) {
+  .market {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

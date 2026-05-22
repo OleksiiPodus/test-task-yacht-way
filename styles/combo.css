@@ -1,0 +1,116 @@
+/* Autocomplete combobox: input + chevron toggle + grouped dropdown options.
+   Loaded after form.css so combo-specific overrides on `.combo input` win. */
+
+.combo > label:first-child {
+  display: none;
+}
+
+.combo input {
+  padding-right: 44px;
+}
+
+.combo input::placeholder {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.combo .combo-toggle {
+  position: absolute;
+  right: 0;
+  top: 1px;
+  width: 44px;
+  height: 38px;
+  padding: 0 12px 0 0;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.combo-menu {
+  position: absolute;
+  z-index: 20;
+  top: 44px;
+  left: 0;
+  right: 0;
+  display: none;
+  max-height: 260px;
+  overflow: auto;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  box-shadow: 0 14px 32px rgba(34, 34, 45, 0.14);
+}
+
+.combo.open .combo-menu {
+  display: block;
+}
+
+.combo-group {
+  margin: 0 0 8px;
+}
+
+.combo-group:last-child {
+  margin-bottom: 0;
+}
+
+.combo-group-title {
+  padding: 6px 8px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 14px;
+  text-transform: uppercase;
+}
+
+/* Scoped through `.combo-menu` to beat `.field button` from form.css and
+   keep menu options border-free (otherwise has-error tints them red). */
+.combo-menu .combo-option,
+.combo-menu .combo-create {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  min-height: 40px;
+  margin: 0;
+  padding: 10px 12px;
+  color: var(--ink);
+  background: #fff;
+  border: 0;
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+}
+
+.combo-menu .combo-option:hover,
+.combo-menu .combo-option.active,
+.combo-menu .combo-create:hover {
+  background: #f6f2ff;
+}
+
+.combo-option.connected {
+  color: var(--purple);
+  font-weight: 600;
+}
+
+.combo-option small {
+  margin-left: auto;
+  color: var(--soft);
+  font-size: 11px;
+}
+
+.combo-create {
+  color: var(--purple);
+  font-weight: 600;
+}
+
+.combo-empty {
+  padding: 10px 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 18px;
+}

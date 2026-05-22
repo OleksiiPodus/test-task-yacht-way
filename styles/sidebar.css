@@ -1,0 +1,291 @@
+/* Left rail: brand, step navigation, Create-New link, Draft button overlay. */
+
+.rail {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  width: var(--rail-width);
+  height: 100vh;
+  min-height: 800px;
+  padding: 33px 40px 40px;
+  color: #fff;
+  background:
+    linear-gradient(173deg, #08070c 2%, #201235 55%, #1d285a 88%, #002650 114%),
+    #22222d;
+  border-radius: 0 2px 2px 0;
+}
+
+.brand {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  width: 156px;
+  height: 38px;
+  color: #fff;
+  font-family: "Red Hat Display", Arial, sans-serif;
+  font-size: 21.958px;
+  font-weight: 400;
+  line-height: 36.93px;
+  letter-spacing: 1.3175px;
+  text-decoration: none;
+}
+
+.brand > span {
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.brand > span:first-child {
+  left: 0;
+}
+
+.brand-light {
+  left: 80.19px;
+  font-weight: 300;
+}
+
+.brand-mark {
+  position: absolute;
+  left: 78.87px;
+  top: 5.83px;
+  width: 77.13px;
+  height: 25.98px;
+  pointer-events: none;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  margin-top: 28px;
+}
+
+.step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  column-gap: 20px;
+  align-items: center;
+  width: 244px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration: none;
+  padding-left: 8px;
+}
+
+.step.done {
+  color: #fff;
+}
+
+.step.current {
+  grid-template-columns: 40px 1fr;
+  column-gap: 16px;
+  min-height: 48px;
+  padding-left: 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+  margin: 0px;
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.done .step-icon {
+  background: #fff;
+}
+
+.done .step-line {
+  background: #fff;
+}
+
+.current .step-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(246, 246, 247, 0.2);
+}
+
+.current .step-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.step-icon-col {
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-line {
+  width: 2px;
+  height: 12px;
+  margin: 4px 0px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 1px;
+}
+
+.step:last-child .step-line {
+  display: none;
+}
+
+.step-mark {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.step-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-self: start;
+  padding: 4px 0;
+}
+
+.current .step-content {
+  padding: 6px 0;
+}
+
+.step-marks {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.create-new {
+  margin-top: auto;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-decoration: none;
+}
+
+.draft-button {
+  position: absolute;
+  top: 32px;
+  right: 60px;
+  z-index: 3;
+  min-width: 180px;
+  padding: 8px 20px;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid #22222d;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+@media (max-width: 1100px) {
+  .rail {
+    padding: 28px;
+  }
+
+  .brand {
+    transform: scale(0.88);
+    transform-origin: left top;
+  }
+
+  .steps {
+    margin-top: 44px;
+  }
+
+  .step {
+    width: 100%;
+    column-gap: 14px;
+    padding-left: 8px;
+  }
+
+  .draft-button {
+    right: 24px;
+  }
+}
+
+@media (min-width: 821px) and (max-width: 1400px) {
+  .draft-button {
+    top: 22px;
+  }
+}
+
+@media (max-width: 820px) {
+  .rail {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 18px 20px;
+    border-radius: 0;
+    z-index: 10;
+  }
+
+  .brand {
+    transform: scale(0.8);
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .step,
+  .step.current {
+    grid-template-columns: 28px minmax(0, 1fr);
+    width: auto;
+    min-height: 32px;
+    column-gap: 8px;
+    font-size: 12px;
+    line-height: 16px;
+    padding-left: 0px;
+  }
+
+  .step-mark,
+  .step-line {
+    display: none;
+  }
+
+  .step-icon,
+  .current .step-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+
+  .create-new {
+    margin-top: 12px;
+    font-size: 11px;
+  }
+
+  .draft-button {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
+    min-width: 160px;
+    font-size: 12px;
+    padding: 0 20px;
+    background: #fff;
+    line-height: 18px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 620px) {
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,252 @@
+/* Form skeleton: groups, rows, base field, floating label, error/locked states,
+   error message, status banner, hint text, generic checkbox row, section margins. */
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.group {
+  position: relative;
+  margin: 0 0 24px;
+}
+
+.group h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.section-icon {
+  display: block;
+  flex-shrink: 0;
+}
+
+.row {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.row.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.field {
+  position: relative;
+  display: block;
+  height: 40px;
+}
+
+.field.full {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.field > span:first-child,
+.field > label:first-child {
+  position: absolute;
+  left: 12px;
+  top: -9px;
+  z-index: 2;
+  padding: 0 4px;
+  color: var(--muted);
+  background: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.field input,
+.field button,
+.field.tag-field {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  padding: 8px 12px;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  outline: none;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+}
+
+.field-message {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 52px;
+  margin: 0;
+  align-items: center;
+  gap: 8px;
+  color: #b42318;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.field-message::before {
+  content: "";
+  display: block;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  background-color: #b42318;
+  -webkit-mask: url("../assets/icons/ui/icon-info.svg") center / contain no-repeat;
+  mask: url("../assets/icons/ui/icon-info.svg") center / contain no-repeat;
+}
+
+.field.has-error {
+  height: 72px;
+}
+
+.field.has-error input {
+  border-color: #d92d20;
+}
+
+.field.has-error .field-message {
+  display: flex;
+}
+
+.field.is-locked input {
+  color: #8c8c92;
+  background: #f9fafb;
+}
+
+.field.is-locked .combo-toggle {
+  display: none;
+}
+
+.field .help-dot {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+}
+
+.field b {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  color: var(--purple);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.field b.counter {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 2px 8px;
+  background: #fcfafe;
+  border-radius: 26px;
+  color: var(--purple);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.form-status {
+  width: 100%;
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  color: #027a48;
+  background: #ecfdf3;
+  border: 1px solid #abefc6;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.hint {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.hint img {
+  flex-shrink: 0;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 20px;
+  font-weight: 500;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.check input {
+  width: 20px;
+  height: 20px;
+  margin: 2px 0 0;
+  appearance: none;
+  background: #fff;
+  border: 1px solid #dcdcde;
+  border-radius: 4px;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+/* Section spacing — each form group has its own bottom margin to control rhythm. */
+.vessel-details {
+  margin-bottom: 40px;
+}
+
+.vessel-location {
+  margin-bottom: 40px;
+}
+
+.vessel-location .field.full {
+  margin-bottom: 12px;
+}
+
+.vessel-type {
+  margin-bottom: 40px;
+}
+
+.vessel-type .field.full {
+  margin-bottom: 0;
+}
+
+.availability {
+  margin-bottom: 40px;
+}
+
+.availability .field.full {
+  margin-bottom: 0;
+}
+
+.availability .segmented {
+  margin-bottom: 20px;
+}
+
+.good-for {
+  margin-bottom: 40px;
+}
+
+@media (max-width: 620px) {
+  .row.two {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,27 @@
+/* Two-button segmented selectors (Condition, Availability, Price Mode). */
+
+.segmented {
+  margin-bottom: 0;
+}
+
+.segmented button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 44px;
+  padding: 8px 0;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.segmented button.is-selected,
+.segmented button[aria-pressed="true"] {
+  color: var(--purple);
+  border-color: var(--purple-line);
+  background: #fbf8ff;
+}

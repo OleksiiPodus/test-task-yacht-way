@@ -1,0 +1,28 @@
+/* Calendar-icon field (Availability completion date) — disabled state and
+   absolutely-positioned mask icon. */
+
+.calendar-field.is-disabled input,
+.calendar-field.is-disabled i {
+  color: var(--soft);
+}
+
+.calendar-field.is-disabled input {
+  background: #f9fafb;
+}
+
+.calendar-field::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 16px;
+  height: 16px;
+  background-color: #121216;
+  -webkit-mask: url("../assets/icons/sections/icon-calendar.svg") center / contain no-repeat;
+  mask: url("../assets/icons/sections/icon-calendar.svg") center / contain no-repeat;
+  pointer-events: none;
+}
+
+#completion-date::placeholder {
+  color: var(--muted);
+}

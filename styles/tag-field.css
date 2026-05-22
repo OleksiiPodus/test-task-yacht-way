@@ -1,0 +1,33 @@
+/* Category tag chips and counter (Vessel Is Good For). */
+
+.tag-field {
+  gap: 6px;
+  padding-top: 14px;
+}
+
+.tag-field em {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 22px;
+  padding: 0 6px;
+  color: #2f2f39;
+  background: #f9fafb;
+  border-radius: 4px;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.tag-counter {
+  margin-left: auto;
+  margin-right: 4px;
+}
+
+.counter-filled {
+  color: #ccb9e7;
+}
+
+.tag-chevron {
+  flex-shrink: 0;
+}

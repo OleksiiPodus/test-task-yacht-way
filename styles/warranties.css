@@ -1,0 +1,139 @@
+/* Warranty cards: date input + on/off toggle. Each card is a small shadowed
+   container. Toggle animates the dot between on/off states. */
+
+.warranties {
+  margin-bottom: 48px;
+}
+
+.warranty-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.warranty-card {
+  display: grid;
+  grid-template-columns: 155px 1fr;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  height: 72px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+}
+
+.warranty-card p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.warranty-card p span {
+  color: var(--soft);
+}
+
+.warranty-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.warranty-controls .datebox {
+  flex: 1;
+}
+
+.warranty-card.is-disabled {
+  color: var(--soft);
+}
+
+.warranty-card.is-disabled .datebox input {
+  color: var(--soft);
+  background: #f9fafb;
+}
+
+.datebox {
+  position: relative;
+  display: block;
+  height: 40px;
+}
+
+.datebox span {
+  position: absolute;
+  left: 12px;
+  top: -8px;
+  z-index: 1;
+  padding: 0 4px;
+  color: var(--muted);
+  background: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.datebox input {
+  width: 100%;
+  height: 40px;
+  padding: 8px 40px 8px 12px;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.datebox::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: #121216;
+  -webkit-mask: url("../assets/icons/sections/icon-calendar.svg") center / contain no-repeat;
+  mask: url("../assets/icons/sections/icon-calendar.svg") center / contain no-repeat;
+  pointer-events: none;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  width: 36px;
+  height: 20px;
+  padding: 2px;
+  background: var(--purple);
+  border: 0;
+  border-radius: 16px;
+  transition: background 0.3s ease-out;
+}
+
+.toggle span {
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 2px rgba(0, 35, 11, 0.2);
+  transition: transform 0.3s ease-out;
+}
+
+.toggle.is-off {
+  background: rgba(112, 128, 144, 0.6);
+}
+
+.toggle.is-off span {
+  transform: translateX(-16px);
+}
+
+@media (max-width: 620px) {
+  .warranty-card {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}

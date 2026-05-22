@@ -1,0 +1,23 @@
+/* Select-trigger variants (placeholder vs filled value) and the shared chevron. */
+
+.select button.select-ph {
+  gap: 12px;
+  color: var(--muted);
+}
+
+.select button.select-value {
+  justify-content: space-between;
+}
+
+.select-ph > span:first-child {
+  flex: 1;
+}
+
+.select button .help-dot {
+  position: static;
+}
+
+.field-chevron {
+  flex-shrink: 0;
+  display: block;
+}

@@ -1,0 +1,20 @@
+/* Taxes section: 3 selects (status, import duty, country of duty). */
+
+.taxes {
+  margin-bottom: 40px;
+}
+
+.taxes .row {
+  margin-bottom: 20px;
+}
+
+.duty {
+  width: calc((100% - 20px) / 2);
+  margin-bottom: 0;
+}
+
+@media (max-width: 620px) {
+  .duty {
+    width: 100%;
+  }
+}
